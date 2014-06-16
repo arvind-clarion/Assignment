@@ -15,7 +15,7 @@ development:
   database: SaveRupya_development
   pool: 5
   username: root
-  password:
+  password: clarion
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: SaveRupya_test
   pool: 5
   username: root
-  password:
+  password: clarion
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: SaveRupya_production
   pool: 5
   username: root
-  password:
+  password: clarion
   socket: /var/run/mysqld/mysqld.sock
