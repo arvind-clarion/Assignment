@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  
+  <% @categories.each do |c| %>
+    <tr>
+      <td><%= c.name %></td>
+      <td><%= c.description  %></td>
+      <td><%= link_to 'Show',category_path(c)%></td>
+      <td><%= link_to 'Edit',edit_category_path(c)%></td>
+      <td><%= button_to 'Delete', {controller: :categories ,action: :destroy , id: c.id}, confirm: "Are you sure?" ,method: :delete%></td>
+    </tr>
+  <% end %>
+</table>

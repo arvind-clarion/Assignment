@@ -1,2 +1,15 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<p>
+  <strong>name:</strong>
+  <%= @category.name %>
+</p>
+
+<p>
+  <strong>status:</strong>
+  <%= @category.status %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @category.description %>
+</p>
+<%= link_to 'Show All categories', categories_path %>

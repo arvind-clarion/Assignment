@@ -1,0 +1,36 @@
+<%= form_for(@category) do |f| %> 
+  <% if @category.present? && @category.errors.any? %>
+    <div id="error_explanation">
+      <h5 style="color:DarkRed">
+        <%= pluralize(@category.errors.count, "error") %> 
+        prohibited
+        this category from being saved:</h5>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <center><h3>New Category</h3></center>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+  <%= f.radio_button :status, true %> 
+  <%= f.label :status_true, 'Active' %>
+  <%= f.radio_button :status, false%>
+  <%= f.label :status_false, 'Inactive' %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
