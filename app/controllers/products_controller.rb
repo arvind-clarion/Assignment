@@ -1,0 +1,45 @@
+class ProductsController < ApplicationController
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(params[:product])
+      if @product.save
+        redirect_to @product
+      else
+        #render plain: "ok"
+        render 'new'
+        #render html: "<strong>Not Found</strong>"
+      end 
+  end  
+
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def index
+    @products = Product.all
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+  
+  def update
+    # render :text => params.inspect and return false
+    @product = Product.find(params[:id])
+    #if @user.update(user_params)
+    if @product.update_attributes(params[:product])
+      redirect_to @product
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    @product = Product.find(params[:id])  
+    @product.destroy
+    redirect_to products_path
+  end 
+end

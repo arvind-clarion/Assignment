@@ -1,0 +1,41 @@
+<%= form_for(@product) do |f| %> 
+  <% if @product.present? && @product.errors.any? %>
+    <div id="error_explanation">
+      <h5 style="color:DarkRed">
+        <%= pluralize(@product.errors.count, "error") %> 
+        prohibited
+        this product from being saved:</h5>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <center><h3>New product</h3></center>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+  <%= f.radio_button :status, true %> 
+  <%= f.label :status_true, 'Active' %>
+  <%= f.radio_button :status, false%>
+  <%= f.label :status_false, 'Inactive' %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
