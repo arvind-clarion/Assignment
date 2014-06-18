@@ -1,3 +1,4 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :price, :status, :description
+  belongs_to :category
+  attr_accessible :name, :price, :status, :description, :category_id
 end
