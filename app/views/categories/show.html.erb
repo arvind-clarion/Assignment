@@ -2,14 +2,18 @@
   <strong>name:</strong>
   <%= @category.name %>
 </p>
-
-<p>
-  <strong>status:</strong>
-  <%= @category.status %>
-</p>
-
-<p>
-  <strong>description:</strong>
-  <%= @category.description %>
-</p>
+<table>
+    <tr>
+      <th>Name</th>
+      <th>price</th>
+      <th>Description</th>
+    </tr>
+    <% @category.products.each do |c| %>
+    <tr>
+      <td><%= c.name %></td>
+      <td><%= c.price %></td>
+      <td><%= c.description  %></td>
+    </tr>  
+  <% end %>
+</table>
 <%= link_to 'Show All categories', categories_path %>
