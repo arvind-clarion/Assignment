@@ -8,9 +8,7 @@ class ProductsController < ApplicationController
       if @product.save
         redirect_to @product
       else
-        #render plain: "ok"
         render 'new'
-        #render html: "<strong>Not Found</strong>"
       end 
   end  
 
@@ -27,9 +25,7 @@ class ProductsController < ApplicationController
   end
   
   def update
-    # render :text => params.inspect and return false
     @product = Product.find(params[:id])
-    #if @user.update(user_params)
     if @product.update_attributes(params[:product])
       redirect_to @product
     else
