@@ -1,0 +1,19 @@
+<div class="header">
+  <% if user_signed_in? %>
+  <div class="p">
+    Log-In :<strong><%= current_user.email %></strong><br>
+    <%= link_to 'Account setting', edit_user_registration_path %>
+    |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </div>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> |
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+
+  <div class="navigation1">
+        <%=link_to "Home", welcome_index_path %>
+        <%=link_to "Category", categories_path %>
+        <%=link_to "Product", products_path %> 
+  </div>
+</div> 

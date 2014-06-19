@@ -2,8 +2,9 @@ SaveRupya::Application.routes.draw do
   devise_for :users
   resources :categories
   resources :products
-  resources :welcome
-    root :to => 'welcome#index'
+  
+  get 'welcome/index'
+  root :to => 'welcome#index'
   #resources :welcome
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,2 +1,10 @@
 <center><h2>Save Rupya</h2></center>
   <%= image_tag "index.jpeg",class: "img", :alt => "rss feed" %>
+  <table>
+    <% Category.all.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= c.description  %></td>
+      </tr>
+    <% end %>
+  </table>
