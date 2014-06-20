@@ -35,7 +35,8 @@
 .p
 {
   float: right;
-  color: red;
+  color: black;
+  padding-top: px;
 }
 
 .p1
@@ -78,6 +79,15 @@
   font-family: Verdana, Arial, Helvetica, sans-serif;
   text-align: left
   display:block;
+}
+
+.title
+{
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  height: 30px;
+  font-size: 25px;
 }
 
 

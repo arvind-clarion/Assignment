@@ -1,8 +1,29 @@
+<div class="title">Category List</div>
+<table border="1px">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Number of producte</th>
+    <th colspan=3>Action</th>
+  </tr>
+  <% Category.all.each do |c| %>
+    <tr>
+      <td><%= link_to c.name, c %></td>
+      <td><%= c.description  %></td>
+      <td><%= c.products.count %></td>
+      <td><%= link_to 'Show',category_path(c)%></td>
+      <td><%= link_to 'Edit',edit_category_path(c)%></td>
+      <td><%= button_to 'Delete', {controller: :categories ,action: :destroy , id: c.id}, confirm: "Are you sure?" ,method: :delete%>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class="title">Selected Category Product List</div>
 <p>
   <strong>name:</strong>
   <%= @category.name %>
 </p>
-<table>
+<table border="1px">
   <tr>
     <th>Name</th>
     <th>price</th>
