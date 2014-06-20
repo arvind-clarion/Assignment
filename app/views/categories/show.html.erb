@@ -1,39 +1,19 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Number of producte</th>
-  </tr>
-  <% Category.all.each do |c| %>
-    <tr>
-      <td><%= link_to c.name, c %></td>
-      <td><%= c.description  %></td>
-      <td><%= c.products.count %></td>
-      <td><%= link_to 'Show',category_path(c)%></td>
-      <td><%= link_to 'Edit',edit_category_path(c)%></td>
-      <td><%= button_to 'Delete', {controller: :categories ,action: :destroy , id: c.id}, confirm: "Are you sure?" ,method: :delete%></td>
-    </tr>
-  <% end %>
-</table>
-
 <p>
   <strong>name:</strong>
   <%= @category.name %>
 </p>
 <table>
-    <tr>
-      <th>Name</th>
-      <th>price</th>
-      <th>Description</th>
-    </tr>
-    <% @category.products.each do |c| %>
-    <tr>
-      <td><%= c.name %></td>
-      <td><%= c.price %></td>
-      <td><%= c.description  %></td>
-    </tr>  
+  <tr>
+    <th>Name</th>
+    <th>price</th>
+    <th>Description</th>
+  </tr>
+  <% @category.products.each do |c| %>
+  <tr>
+    <td><%= c.name %></td>
+    <td><%= c.price %></td>
+    <td><%= c.description  %></td>
+  </tr>  
   <% end %>
-</table>
-
-
+</table>  
 <%= link_to 'Show All categories', categories_path %>

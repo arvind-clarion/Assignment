@@ -14,7 +14,7 @@
 .header
 {
   height:90px;
-  background-color: DarkTurquoise ;
+  background-color: #E2C6FF ;
   margin-top:-10px;
   color:LightCyan;
   width:100%; 
@@ -23,7 +23,7 @@
 
 .footer
 {
-  background-color: DarkTurquoise;
+  background-color: #E2C6FF;
   float: right;
   position: relative;
   bottom:0;
@@ -40,10 +40,9 @@
 
 .p1
 {
-  
   height: 520px;
   margin-top: -25px;
-  background-color: pink;
+  background-color: #E4F5D5;
   width:100%; 
 }
 
@@ -54,7 +53,7 @@
   margin-top: -25px;
   margin-left: 250px;
   margin-top: 25px;
-  background-color:pink; 
+  background-color:#E4F5D5  ; 
 }
 
 .navigation

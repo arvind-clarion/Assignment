@@ -2,7 +2,6 @@ SaveRupya::Application.routes.draw do
   devise_for :users
   resources :categories
   resources :products
-  
   get 'welcome/index'
   root :to => 'welcome#index'
   #resources :welcome
